@@ -13,6 +13,6 @@ spec:
   alternateBackends:
   - kind: Service
     name: user11-hello-world
-    weight: 100
+    weight: 10
   port:
     targetPort: 8080
