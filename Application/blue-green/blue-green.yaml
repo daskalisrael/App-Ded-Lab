@@ -9,10 +9,10 @@ spec:
   to:
     kind: Service
     name: user11-hello-chart-service
-    weight: 100
+    weight: 1
   alternateBackends:
   - kind: Service
     name: user11-hello-world
-    weight: 10
+    weight: 1
   port:
     targetPort: 8080
