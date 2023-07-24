@@ -9,10 +9,10 @@ spec:
   to:
     kind: Service
     name: user11-hello-chart-service
-    weight: 1
+    weight: 10
   alternateBackends:
   - kind: Service
     name: israeldaskal-hello-world
-    weight: 1
+    weight: 10
   port:
     targetPort: 8080
