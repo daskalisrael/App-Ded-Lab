@@ -24,7 +24,7 @@ spec:
           ports:
             - containerPort: {{ .Values.containers.containerPort }}
               protocol: TCP
-          imagePullPolicy: IfNotPresent
+          imagePullPolicy: Always
 # update with the image you build in part 1
           image: {{ .Values.containers.image }}:{{ .Values.containers.tag }}
           # image: 'quay.io/israeldaskal/argocd:v2'
