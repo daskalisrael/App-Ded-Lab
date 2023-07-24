@@ -12,7 +12,7 @@ spec:
     weight: 1
   alternateBackends:
   - kind: Service
-    name: user11-hello-world
+    name: israeldaskal-hello-world
     weight: 1
   port:
     targetPort: 8080
