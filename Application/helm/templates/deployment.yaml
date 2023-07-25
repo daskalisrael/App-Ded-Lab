@@ -34,28 +34,28 @@ spec:
           image: '{{ .Values.containers.image }}:{{ .Values.containers.tag }}' 
           volumeMounts:
           - name: index-html
-            mountPath: /tmp/html # this will mount the html.index file to it application location
+            mountPath: {{ .Values.volumes.mount.path }}
           # image: 'quay.io/israeldaskal/argocd:v2'
           readinessProbe:
             httpGet:
-              path: /health/readiness # this check the application url path
+              path: {{ .Values.readinessProbe.httpGet.path }}
               port: {{ .Values.containers.containerPort  }} # In which port the Application is listening
               scheme: HTTP
-            initialDelaySeconds: 1 # the time is waiting befor testing the application path
-            timeoutSeconds: 1 # the time for timeout
-            periodSeconds: 10 # the abount of time to wait between checks
-            successThreshold: 1 # count to decalre seccessfull 
-            failureThreshold: 3 # count to decalre failure
+            initialDelaySeconds: {{ .Values.readinessProbe.httpGet.initialDelaySeconds }}
+            timeoutSeconds: {{ .Values.readinessProbe.httpGet.timeoutSeconds }}
+            periodSeconds: {{ .Values.readinessProbe.httpGet.periodSeconds }}
+            successThreshold: {{ .Values.readinessProbe.httpGet.successThreshold }}
+            failureThreshold: {{ .Values.readinessProbe.httpGet.failureThreshold }}
           livenessProbe:
             httpGet:
               path: /health/liveliness
               port: {{ .Values.containers.containerPort }}
               scheme: HTTP
-            initialDelaySeconds: 1
-            timeoutSeconds: 1
-            periodSeconds: 10
-            successThreshold: 1
-            failureThreshold: 3
+            initialDelaySeconds: {{ .Values.readinessProbe.httpGet.initialDelaySeconds }}
+            timeoutSeconds: {{ .Values.readinessProbe.httpGet.timeoutSeconds }}
+            periodSeconds: {{ .Values.readinessProbe.httpGet.periodSeconds }}
+            successThreshold: {{ .Values.readinessProbe.httpGet.successThreshold }}
+            failureThreshold: {{ .Values.readinessProbe.httpGet.failureThreshold }}
           env:
             - name: PORT
               value: {{ .Values.containers.containerPort | quote }}
