@@ -31,7 +31,11 @@ spec:
               protocol: TCP
           imagePullPolicy: Always
           # update with the image you build in part 1
+<<<<<<< HEAD
           image: '{{ .Values.containers.image }}:{{ .Values.containers.tag }}' 
+=======
+          image: '{{ .Values.containers.image }}:{{ .Values.containers.tag }}'
+>>>>>>> aa44352 (fix '')
           volumeMounts:
           - name: index-html
             mountPath: /tmp/html # this will mount the html.index file to it application location
