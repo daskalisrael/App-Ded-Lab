@@ -51,11 +51,11 @@ spec:
               path: /health/liveliness
               port: {{ .Values.containers.containerPort }}
               scheme: HTTP
-            initialDelaySeconds: {{ .Values.readinessProbe.httpGet.initialDelaySeconds }}
-            timeoutSeconds: {{ .Values.readinessProbe.httpGet.timeoutSeconds }}
-            periodSeconds: {{ .Values.readinessProbe.httpGet.periodSeconds }}
-            successThreshold: {{ .Values.readinessProbe.httpGet.successThreshold }}
-            failureThreshold: {{ .Values.readinessProbe.httpGet.failureThreshold }}
+            initialDelaySeconds: {{ .Values.livenessProbe.httpGet.initialDelaySeconds }}
+            timeoutSeconds: {{ .Values.livenessProbe.httpGet.timeoutSeconds }}
+            periodSeconds: {{ .Values.livenessProbe.httpGet.periodSeconds }}
+            successThreshold: {{ .Values.livenessProbe.httpGet.successThreshold }}
+            failureThreshold: {{ .Values.livenessProbe.httpGet.failureThreshold }}
           env:
             - name: PORT
               value: {{ .Values.containers.containerPort | quote }}
