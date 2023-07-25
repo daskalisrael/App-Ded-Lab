@@ -32,10 +32,10 @@ spec:
           imagePullPolicy: Always
           # update with the image you build in part 1
 <<<<<<< HEAD
-          image: '{{ .Values.containers.image }}:{{ .Values.containers.tag }}' 
-=======
           image: '{{ .Values.containers.image }}:{{ .Values.containers.tag }}'
->>>>>>> aa44352 (fix '')
+=======
+          image: '{{ .Values.containers.image }}:{{ .Values.containers.tag }}' 
+>>>>>>> 16f1f34bdb30b991538f79ef300caff5db6f3b5a
           volumeMounts:
           - name: index-html
             mountPath: /tmp/html # this will mount the html.index file to it application location
